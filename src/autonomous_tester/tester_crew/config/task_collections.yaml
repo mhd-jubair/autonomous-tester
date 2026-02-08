@@ -1,0 +1,13 @@
+web_app:
+    Provide complete instruction to the browser_tool for each test case one by one.
+    The web application URL is {endpoint}.
+    
+    For each test case from the test plan, give detailed browser instructions 
+    to navigate, interact with UI elements, and verify the expected behavior.
+
+api_app:
+    Provide complete instruction to the api_tool for each test case one by one.
+    The API endpoint is {endpoint}.
+    
+    For each test case from the test plan, give detailed API instructions 
+    to send requests, interact with API endpoints, and verify the expected behavior.

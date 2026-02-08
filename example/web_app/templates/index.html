@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Example Calculator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-br from-blue-500 to-purple-600 min-h-screen flex items-center justify-center font-sans">
+
+    <div class="bg-white p-8 rounded-2xl shadow-2xl w-96 text-center">
+        <h1 class="text-2xl font-bold text-gray-800 mb-6">Simple Adder</h1>
+        
+        <form method="POST" class="space-y-4">
+            <input type="number" step="any" name="num1" placeholder="First Number" required
+                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition">
+            
+            <div class="text-xl font-bold text-gray-400">+</div>
+            
+            <input type="number" step="any" name="num2" placeholder="Second Number" required
+                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition">
+            
+            <button type="submit" 
+                class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 rounded-lg transition duration-300 shadow-md">
+                Add Numbers
+            </button>
+        </form>
+
+        {% if result is not none %}
+        <div class="mt-8 p-4 bg-gray-100 rounded-lg border-t-4 border-blue-500 animate-bounce">
+            <p class="text-sm text-gray-500 uppercase tracking-wide">Result</p>
+            <p class="text-3xl font-extrabold text-blue-600">{{ result }}</p>
+        </div>
+        {% endif %}
+    </div>
+
+</body>
+</html>

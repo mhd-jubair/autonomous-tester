@@ -1,0 +1,88 @@
+Simple Authentication API
+=========================
+
+Overview:
+A REST API that provides user authentication functionality. Users can log in with email and password credentials.
+
+Base URL:
+http://localhost:8000
+
+Endpoints:
+
+1. Health Check
+   ---------------
+   Endpoint: GET /health
+   Description: Check if the API server is running and healthy.
+   
+   Request:
+   - Method: GET
+   - URL: /health
+   - Body: None
+   
+   Response (Success - 200 OK):
+   {
+       "status": "ok"
+   }
+
+2. User Login
+   ---------------
+   Endpoint: POST /login
+   Description: Authenticate a user with email and password credentials.
+   
+   Request:
+   - Method: POST
+   - URL: /login
+   - Content-Type: application/json
+   - Body:
+     {
+         "email": "user@test.com",
+         "password": "password123"
+     }
+   
+   Response (Success - 200 OK):
+   {
+       "message": "Login successful",
+       "role": "user"
+   }
+   
+   Response (Error - 404 Not Found):
+   {
+       "detail": "User not found"
+   }
+   
+   Response (Error - 401 Unauthorized):
+   {
+       "detail": "Invalid password"
+   }
+
+Test Users:
+   Email: user@test.com
+   Password: password123
+   
+   Email: admin@test.com
+   Password: admin123
+
+Functional Requirements:
+
+FR-001: Health Check
+   - The API shall respond to GET /health requests
+   - The API shall return status "ok" when the server is running
+
+FR-002: User Login
+   - The API shall accept email and password in the request body
+   - The API shall validate that the email exists in the system
+   - The API shall validate that the password matches the stored password
+   - The API shall return "Login successful" message on valid credentials
+   - The API shall return 404 error if user email is not found
+   - The API shall return 401 error if password is incorrect
+
+Test Scenarios:
+
+Positive Test Cases:
+   1. Login with valid user credentials (user@test.com / password123)
+   2. Login with valid admin credentials (admin@test.com / admin123)
+   3. Health check returns status ok
+
+Negative Test Cases:
+   1. Login with non-existent email (should return 404)
+   2. Login with wrong password for existing user (should return 401)

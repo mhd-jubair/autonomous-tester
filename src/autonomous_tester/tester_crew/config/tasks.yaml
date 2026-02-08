@@ -1,0 +1,43 @@
+test_planning:
+  description: >
+    Create simple test cases by reading the requirements using the requirements_tool.
+    Understand the application functionality and define test cases to validate it.
+    
+  expected_output: >
+    A list of test cases with:
+    - Test ID
+    - Description
+    - Pre-steps (preconditions before testing)
+    - Steps (actions to perform the test)
+    
+  agent: test_planner
+
+test_execution:
+  description: >
+    {task_description}
+    
+    You MUST complete ALL tests before providing your final answer.
+    Do NOT provide a final answer until all operations are done.
+
+  expected_output: >
+    A list of test results with the following format for each test case:
+    - Test ID
+    - Description
+    - Status (PASSED/FAILED)
+    - Defect (if any)
+    
+  agent: test_specialist
+
+report_generation:
+  description: >
+    Create a summary report based on the test execution results.
+    Include total test cases executed, their descriptions, results, and any defects found.
+    
+  expected_output: >
+    A summary table containing:
+    - Total test cases executed
+    - For each test: Test ID, Description, Result (PASSED/FAILED), Defects (if any)
+    
+    One line summary about defects if any defects exist.
+    
+  agent: report_specialist
