@@ -20,16 +20,6 @@ def _get_config():
                 "deployment_id": settings.EMBEDDING_MODEL,
             },
         },
-        "vectordb": {
-            "provider": "chromadb",
-            "config": {
-                
-                "persist_directory": settings.STORAGE_DIR,
-                "allow_reset": True,
-                "is_persistent": True,
-            
-            }
-        }
     }
     return config
 

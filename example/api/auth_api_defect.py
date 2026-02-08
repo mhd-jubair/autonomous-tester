@@ -19,9 +19,6 @@ def login(request: LoginRequest):
     if request.email not in USERS_DB:
         raise HTTPException(status_code=404, detail="User not found")
 
-    if USERS_DB[request.email] != request.password:
-        raise HTTPException(status_code=401, detail="Invalid password")
-
     return {
         "message": "Login successful",
         "role": "user"

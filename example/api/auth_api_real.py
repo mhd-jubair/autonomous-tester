@@ -22,9 +22,10 @@ def login(request: LoginRequest):
     if USERS_DB[request.email] != request.password:
         raise HTTPException(status_code=401, detail="Invalid password")
 
+    role = "admin" if "admin" in request.email else "user"
     return {
         "message": "Login successful",
-        "role": "user"
+        "role": role
     }
 
 @app.get("/health")

@@ -70,6 +70,8 @@ class AutonomousTester():
         return Task(
             config=self.tasks_config['report_generation'],
             context=[self.test_execution()],
+            output_file="test_report.md",
+            markdown=True
         )
 
     @crew
