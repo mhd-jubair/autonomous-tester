@@ -1,0 +1,51 @@
+Simple Adder Web Application - Requirements
+
+Application Overview
+A simple web-based calculator application that adds two numbers and displays the result.
+
+Functional Requirements
+
+FR-001: Application Title
+The page must display the title "Simple Adder" at the top of the form.
+
+FR-002: Number Input Fields
+The application must provide two input fields for entering numbers.
+The first input field must accept decimal numbers and be labeled "First Number".
+The second input field must accept decimal numbers and be labeled "Second Number".
+Both input fields must be required (cannot be empty).
+
+FR-003: Add Numbers Button
+The application must have a button labeled "Add Numbers".
+Clicking the button must submit the form and perform the addition.
+
+FR-004: Result Display
+After submitting the form, the application must display the result of adding the two numbers.
+The result must be shown in a clearly visible section labeled "Result".
+
+FR-005: Addition Calculation
+The calculation must correctly add the two input numbers.
+Example: If num1 = 5 and num2 = 3, the result must be 8.
+Example: If num1 = 10.5 and num2 = 2.5, the result must be 13.0.
+Example: If num1 = -5 and num2 = 10, the result must be 5.
+
+Test Scenarios
+
+TS-001: Basic Addition
+Enter 5 in the first field and 3 in the second field.
+Click "Add Numbers".
+Expected: Result should display 8.
+
+TS-002: Decimal Addition
+Enter 10.5 in the first field and 2.5 in the second field.
+Click "Add Numbers".
+Expected: Result should display 13.0.
+
+TS-003: Negative Number Addition
+Enter -5 in the first field and 10 in the second field.
+Click "Add Numbers".
+Expected: Result should display 5.
+
+TS-004: Zero Addition
+Enter 0 in the first field and 100 in the second field.
+Click "Add Numbers".
+Expected: Result should display 100.
